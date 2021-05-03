@@ -2,25 +2,34 @@ import React from 'react'
 import '../../App.css';
 import '../Modal.css';
 import Modal from '../Modal';
+import templates from '../../templates.json'
+
 
 function Emails() {
+  const [modalContent, setModalContent] = React.useState(0);
   const modalRef = React.useRef();
 
-  const openModal = () => {
+  const openModal = (i) => {
+    setModalContent(i)
     modalRef.current.openModal()
   };
 
   return (
-    <div className="email1">
-      <button onClick={openModal}>Open Modal</button>
+    <div className="email-templates">
+      { templates.map((e, i) => {
+        return (<div key={`template${i}`}>
+          <button onClick={() => openModal(i)}>{templates[i].title}</button>
+        </div>)
+      })
+      }
       <Modal ref={modalRef}>
-        <h1>Modal Header</h1>
+        <h1>{templates[modalContent].title}</h1>
         <p>
-          <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi eligendi esse facere illo in minima nulla quis reiciendis. Eligendi impedit nostrum quam quod reprehenderit, ullam veritatis. Fuga provident quos velit.</span><span>Accusantium ad, alias animi et eum, excepturi explicabo fuga iusto magnam maxime minima molestias nam nemo nostrum pariatur perspiciatis porro quae quibusdam quidem quis repudiandae sed ullam vel, veniam vero.</span><span>Eligendi nulla quasi quibusdam quod saepe suscipit tenetur voluptas voluptate! Accusamus amet, commodi culpa distinctio dolor eveniet expedita hic iure magnam magni mollitia nulla officia quas, reiciendis repellat sapiente, veniam!</span>
+          <span>{templates[modalContent].body}</span>
         </p>
         <button onClick={() => modalRef.current.close()}>
           Close Modal
-        </button>
+          </button>
       </Modal>
     </div>
   );
