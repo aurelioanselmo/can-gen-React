@@ -29,3 +29,23 @@
     z-index: 101;
     padding: 40px;
   }
+
+  .email{
+    color: red;
+  }
+
+  .vdeck{
+    color: green;
+  }
+
+  textarea{
+    min-height: 200px;
+    border: none;
+    outline: none;
+    resize: none;
+  }
+
+  #copied {
+    background-color: green;
+    color: white;
+  }

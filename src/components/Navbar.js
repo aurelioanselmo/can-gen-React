@@ -28,7 +28,7 @@ function Navbar() {
             <nav className='navbar'>
                 <div className='navbar-container'>
                     <Link to="/" className='navbar-logo' onClick={closeMobileMenu}>
-                        Can-Gen <i class="fab fa-linux"/>
+                        Can-Gen <i className="fab fa-linux"/>
                     </Link>
                     <div className='menu-icon' onClick={handleClick}>
                         <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
