@@ -4,9 +4,11 @@
     bottom: 0;
     left: 0;
     right: 0;
-  }
+    height: 100%;
+    transition: all 1.3s ease;
+}
   
-  .modal-backdrop {
+.modal-backdrop {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -14,18 +16,83 @@
     right: 0;
     z-index: 100;
     background-color: rgba(0,0,0,0.3);
-  }
+}
   
-  .modal-box {
+.modal-box {
     position: relative;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    min-height: 30%;
+    transform: translate(-50%, -45%);
+    min-height: 80%;
     width: 60%;
     overflow-y: auto;
-    background-color: white;
+    background-color: black;
+    color: white;
     box-shadow: 0 0 10px rgba(0,0,0,0.25);
     z-index: 101;
     padding: 40px;
-  }
+}
+
+.email-templates {
+  background-color: grey;
+  display: grid;
+  height: 100%;
+  min-height: 100%;
+  margin: auto;
+  overflow-y: scroll;
+  /* flex: auto; */
+}
+
+.top-head > h1 {
+  font-size: 25px;
+} 
+
+.top-head > button {
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  /* z-index: 10; */
+}
+
+.var-input {
+  color: white;
+}
+
+.email{
+  color: red;
+}
+
+.vdeck{
+  color: blue;
+}
+
+textarea{
+  min-height: 200px;
+  border: none;
+  outline: none;
+  color: white;
+  resize: none;
+}
+
+.copy-text {
+  cursor: pointer;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+}
+
+#copied {
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+} 
