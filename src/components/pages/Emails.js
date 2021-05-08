@@ -74,7 +74,7 @@ function Emails() {
         <div className='top-head'>
           <h1>{title}</h1>
           <button onClick={() => modalRef.current.close()}>
-          <Close></Close>
+          <Close />
           </button>
         </div>
         <p>
